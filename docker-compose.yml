@@ -1,11 +1,17 @@
+version: '3.0'
+
+volumes:
+  homebridge_volume:
+
 services:
   homebridge:
     image: homebridge/homebridge:latest
+    container_name:  homebridge
     restart: always
     network_mode: host
     hostname: docker-desktop  # Optional: Set container hostname
     volumes:
-      - ./volumes/homebridge:/homebridge-docker
+      - homebridge_volume:/homebridge
     environment:
       - TZ=America/New_York
       - ENABLE_AVAHI=1      # Optional: Enable/disable Avahi (1=enabled, 0=disabled)
