@@ -5,7 +5,7 @@ services:
     network_mode: host
     hostname: docker-desktop  # Optional: Set container hostname
     volumes:
-      - ./volumes/homebridge:/homebridge
+      - ./volumes/homebridge:/homebridge-docker
     environment:
       - TZ=America/New_York
       - ENABLE_AVAHI=1      # Optional: Enable/disable Avahi (1=enabled, 0=disabled)
